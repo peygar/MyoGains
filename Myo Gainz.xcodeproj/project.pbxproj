@@ -20,6 +20,7 @@
 		A996AA771C53C83600C4432E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A996AA761C53C83600C4432E /* SystemConfiguration.framework */; };
 		A996AA781C53C83B00C4432E /* MyoKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = A996AA711C53C62900C4432E /* MyoKit.framework */; };
 		A996AA7C1C53FD3600C4432E /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */; };
+		A996AA7E1C54181700C4432E /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA7D1C54181700C4432E /* Press.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A996AA741C53C83000C4432E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A996AA761C53C83600C4432E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
+		A996AA7D1C54181700C4432E /* Press.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				A996AA421C53C60B00C4432E /* ViewController.swift */,
 				A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */,
 				A996AA441C53C60B00C4432E /* Main.storyboard */,
+				A996AA7D1C54181700C4432E /* Press.swift */,
 				A996AA4A1C53C60B00C4432E /* Assets.xcassets */,
 				A996AA4C1C53C60B00C4432E /* LaunchScreen.storyboard */,
 				A996AA4F1C53C60B00C4432E /* Info.plist */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A996AA491C53C60B00C4432E /* Myo_Gainz.xcdatamodeld in Sources */,
+				A996AA7E1C54181700C4432E /* Press.swift in Sources */,
 				A996AA7C1C53FD3600C4432E /* WorkoutListTableViewController.swift in Sources */,
 				A996AA431C53C60B00C4432E /* ViewController.swift in Sources */,
 				A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */,

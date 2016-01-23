@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: TLMSettingsViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,7 +19,7 @@ class ViewController: TLMSettingsViewController {
         // Posted whenever a TLMMyo connects
 
         //REMOVE THE FOLLOWING LINE AFTER TESTING!!
-        performSegueWithIdentifier("myoConnected", sender: self)
+        //performSegueWithIdentifier("myoConnected", sender: self)
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
 
