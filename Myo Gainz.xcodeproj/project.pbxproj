@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C1E6BF81C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */; };
+		6C1E6BFA1C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */; };
+		6C1E6BFC1C542E0B006C5C50 /* WorkoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */; };
+		6C1E6C001C542E49006C5C50 /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */; };
+		6C1E6C051C542E97006C5C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1E6C031C542E97006C5C50 /* Main.storyboard */; };
 		A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA401C53C60B00C4432E /* AppDelegate.swift */; };
 		A996AA431C53C60B00C4432E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA421C53C60B00C4432E /* ViewController.swift */; };
-		A996AA461C53C60B00C4432E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A996AA441C53C60B00C4432E /* Main.storyboard */; };
 		A996AA491C53C60B00C4432E /* Myo_Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A996AA471C53C60B00C4432E /* Myo_Gainz.xcdatamodeld */; };
 		A996AA4B1C53C60B00C4432E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A996AA4A1C53C60B00C4432E /* Assets.xcassets */; };
 		A996AA4E1C53C60B00C4432E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A996AA4C1C53C60B00C4432E /* LaunchScreen.storyboard */; };
@@ -19,7 +23,6 @@
 		A996AA751C53C83000C4432E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A996AA741C53C83000C4432E /* CoreBluetooth.framework */; };
 		A996AA771C53C83600C4432E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A996AA761C53C83600C4432E /* SystemConfiguration.framework */; };
 		A996AA781C53C83B00C4432E /* MyoKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = A996AA711C53C62900C4432E /* MyoKit.framework */; };
-		A996AA7C1C53FD3600C4432E /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */; };
 		A996AA7E1C54181700C4432E /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA7D1C54181700C4432E /* Press.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroupCollectionViewController.swift; sourceTree = "<group>"; };
+		6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroupsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewCell.swift; sourceTree = "<group>"; };
+		6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
+		6C1E6C041C542E97006C5C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A996AA3D1C53C60B00C4432E /* Myo Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo Gainz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A996AA401C53C60B00C4432E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A996AA421C53C60B00C4432E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A996AA451C53C60B00C4432E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A996AA481C53C60B00C4432E /* Myo_Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Myo_Gainz.xcdatamodel; sourceTree = "<group>"; };
 		A996AA4A1C53C60B00C4432E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A996AA4D1C53C60B00C4432E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +66,6 @@
 		A996AA731C53C65900C4432E /* <Myo Gainz>-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "<Myo Gainz>-Bridging-Header.h"; sourceTree = "<group>"; };
 		A996AA741C53C83000C4432E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A996AA761C53C83600C4432E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
 		A996AA7D1C54181700C4432E /* Press.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,8 +126,11 @@
 			children = (
 				A996AA401C53C60B00C4432E /* AppDelegate.swift */,
 				A996AA421C53C60B00C4432E /* ViewController.swift */,
-				A996AA7B1C53FD3600C4432E /* WorkoutListTableViewController.swift */,
-				A996AA441C53C60B00C4432E /* Main.storyboard */,
+				6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */,
+				6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */,
+				6C1E6C031C542E97006C5C50 /* Main.storyboard */,
+				6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */,
+				6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */,
 				A996AA7D1C54181700C4432E /* Press.swift */,
 				A996AA4A1C53C60B00C4432E /* Assets.xcassets */,
 				A996AA4C1C53C60B00C4432E /* LaunchScreen.storyboard */,
@@ -257,7 +266,7 @@
 				A996AA781C53C83B00C4432E /* MyoKit.framework in Resources */,
 				A996AA4E1C53C60B00C4432E /* LaunchScreen.storyboard in Resources */,
 				A996AA4B1C53C60B00C4432E /* Assets.xcassets in Resources */,
-				A996AA461C53C60B00C4432E /* Main.storyboard in Resources */,
+				6C1E6C051C542E97006C5C50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A996AA491C53C60B00C4432E /* Myo_Gainz.xcdatamodeld in Sources */,
+				6C1E6BF81C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift in Sources */,
 				A996AA7E1C54181700C4432E /* Press.swift in Sources */,
-				A996AA7C1C53FD3600C4432E /* WorkoutListTableViewController.swift in Sources */,
+				6C1E6BFC1C542E0B006C5C50 /* WorkoutListTableViewCell.swift in Sources */,
+				6C1E6BFA1C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift in Sources */,
+				6C1E6C001C542E49006C5C50 /* WorkoutListTableViewController.swift in Sources */,
 				A996AA431C53C60B00C4432E /* ViewController.swift in Sources */,
 				A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */,
 			);
@@ -322,10 +334,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A996AA441C53C60B00C4432E /* Main.storyboard */ = {
+		6C1E6C031C542E97006C5C50 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A996AA451C53C60B00C4432E /* Base */,
+				6C1E6C041C542E97006C5C50 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
