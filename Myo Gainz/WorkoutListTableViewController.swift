@@ -12,11 +12,11 @@ class WorkoutListTableViewController: UITableViewController {
     
     var workoutType = Int()
     var workoutArray = [String()]
-    enum ExerciseType {
+    /*enum ExerciseType {
         case chest
         case shoulder
         case leg
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +130,12 @@ class WorkoutListTableViewController: UITableViewController {
             break;
         }
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let DestViewController : SetRepsTableViewController = segue.destinationViewController as! SetRepsTableViewController
+        DestViewController.workoutType = workoutType
     }
     
 
