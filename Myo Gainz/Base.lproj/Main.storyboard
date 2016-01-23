@@ -143,7 +143,9 @@
                             <outlet property="delegate" destination="Uen-4B-ph7" id="pQh-H9-ANW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Tk3-YP-drs"/>
+                    <navigationItem key="navigationItem" title="Title" id="Tk3-YP-drs">
+                        <barButtonItem key="rightBarButtonItem" title="Set Reps" id="gqR-er-mgG"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94S-Io-kzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

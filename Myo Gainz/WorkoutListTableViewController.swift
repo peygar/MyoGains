@@ -57,6 +57,15 @@ class WorkoutListTableViewController: UITableViewController {
         default :return ""
         }
     }
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch(section) {
+        case 1:return ""
+        case 2:return ""
+        case 3:return "Tap your fingers twice to skip exercises"
+        default :return ""
+        }
+    }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
