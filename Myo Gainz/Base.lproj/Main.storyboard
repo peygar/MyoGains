@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -95,48 +96,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="kk1-JK-zt1">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="cell" textLabel="xao-fz-zVL" style="IBUITableViewCellStyleDefault" id="CvJ-m0-1O2" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="185" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CvJ-m0-1O2" id="dLb-gl-TF8">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xao-fz-zVL">
-                                                    <rect key="frame" x="15" y="0.0" width="546" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="Q3a-ZL-mu6">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="cell" textLabel="KRN-1K-0Zf" style="IBUITableViewCellStyleDefault" id="yGr-xl-mH7" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="271" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yGr-xl-mH7" id="bVC-v3-b1l">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KRN-1K-0Zf">
-                                                    <rect key="frame" x="15" y="0.0" width="546" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Uen-4B-ph7" id="u3Y-BO-FTq"/>
@@ -166,12 +125,37 @@
                         <sections>
                             <tableViewSection id="tgL-Zl-8c7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xdT-xV-ED3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repCell" id="xdT-xV-ED3" customClass="setRepsTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdT-xV-ED3" id="7WG-n9-NHt">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DR3-e8-y6F">
+                                                    <rect key="frame" x="483" y="7" width="94" height="29"/>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-25-CEK">
+                                                    <rect key="frame" x="27" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucQ-MV-lDF">
+                                                    <rect key="frame" x="395" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ucQ-MV-lDF" firstAttribute="baseline" secondItem="jvf-25-CEK" secondAttribute="baseline" id="LAm-H2-f7t"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DR3-e8-y6F" secondAttribute="trailing" constant="15" id="LEM-eT-FjI"/>
+                                                <constraint firstItem="DR3-e8-y6F" firstAttribute="centerY" secondItem="jvf-25-CEK" secondAttribute="centerY" id="TIx-nn-Obc"/>
+                                                <constraint firstItem="jvf-25-CEK" firstAttribute="leading" secondItem="7WG-n9-NHt" secondAttribute="leadingMargin" constant="19" id="Z7s-Cb-Sy6"/>
+                                                <constraint firstItem="DR3-e8-y6F" firstAttribute="leading" secondItem="ucQ-MV-lDF" secondAttribute="trailing" constant="46" id="kEm-LJ-cCJ"/>
+                                                <constraint firstItem="DR3-e8-y6F" firstAttribute="centerY" secondItem="7WG-n9-NHt" secondAttribute="centerY" id="sTl-dV-4AR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -183,6 +167,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="Q0S-PG-Ibb"/>
+                    <connections>
+                        <outlet property="repsLabel" destination="ucQ-MV-lDF" id="Gxx-Fh-ejH"/>
+                        <outlet property="workoutLabel" destination="jvf-25-CEK" id="7yM-py-rC8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1H-2q-l5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

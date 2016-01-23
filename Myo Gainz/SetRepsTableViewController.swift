@@ -9,6 +9,8 @@
 import UIKit
 
 class SetRepsTableViewController: UITableViewController {
+    @IBOutlet weak var workoutLabel: UILabel!
+    @IBOutlet weak var repsLabel: UILabel!
     
     var workoutType = Int()
 
@@ -55,7 +57,7 @@ class SetRepsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! WorkoutListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("repCell", forIndexPath: indexPath) as! setRepsTableViewCell
         
         // Configure the cell...
         switch workoutType {
