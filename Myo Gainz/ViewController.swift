@@ -16,6 +16,8 @@ class ViewController: TLMSettingsViewController {
         
         // Data notifications are received through NSNotificationCenter.
         // Posted whenever a TLMMyo connects
+        
+        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
 
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChange:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
         
@@ -34,21 +36,24 @@ class ViewController: TLMSettingsViewController {
     func didConnectDevice (notification : NSNotification) {
         // Access the connected device.
         let myo = notification.userInfo![kTLMKeyMyo]
-        print("HI")
-        print("Connected to \(myo!.name)")
+        if let my = myo {
+            print("Connected to \(my.name)")
+            performSegueWithIdentifier("myoConnected", sender: self)
+        }
+        
     }
     
     func didReceivePoseChange (notification: NSNotification) {
         let pose = notification.userInfo![kTLMKeyPose]
-        print ("Pose \(pose)")
+        
+        if (pose?.type == TLMPoseType.Fist) {
+            
+        }
         
     }
     
     func didReceiveOrientationEvent (notification : NSNotification) {
         let orientation = notification.userInfo![kTLMKeyOrientationEvent]
-        if let or = orientation{
-            print ("Orientation \(or)")
-        }
     }
 
 
