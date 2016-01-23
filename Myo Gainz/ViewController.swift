@@ -16,6 +16,9 @@ class ViewController: TLMSettingsViewController {
         
         // Data notifications are received through NSNotificationCenter.
         // Posted whenever a TLMMyo connects
+
+        //REMOVE THE FOLLOWING LINE AFTER TESTING!!
+        performSegueWithIdentifier("myoConnected", sender: self)
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
 

@@ -9,7 +9,6 @@
 import UIKit
 
 class WorkoutListTableViewController: UITableViewController {
-    @IBOutlet var Label: UILabel!
 
     enum ExerciseType{
         case chest
@@ -36,7 +35,7 @@ class WorkoutListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +44,18 @@ class WorkoutListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 1:
+            switch indexPath.row {
+            case 1:
+                performSegueWithIdentifier("workout1", sender: self)
+            default:
+                break;
+                
+            }
+        default:
+            break;
+        }
         
     }
     
