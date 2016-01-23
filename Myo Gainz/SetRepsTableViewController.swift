@@ -32,18 +32,16 @@ class SetRepsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
     
     override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
         switch(section) {
-            
+        //set header for each section of the tableView
         case 1:return "Interval 1"
         case 2:return "Interval 2"
         case 3:return "Interval 3"
@@ -59,7 +57,7 @@ class SetRepsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("repCell", forIndexPath: indexPath) as! setRepsTableViewCell
         
-        // Configure the cell...
+        // configure workoutLabel text to be the same as WorkoutListTableViewController
         switch workoutType {
         case 1:
             switch indexPath.row {

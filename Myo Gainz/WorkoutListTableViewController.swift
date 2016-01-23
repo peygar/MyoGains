@@ -39,16 +39,15 @@ class WorkoutListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
     
     override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
+        //set a header at the top of each section
         switch(section) {
             
         case 1:return "Interval 1"
@@ -59,6 +58,7 @@ class WorkoutListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        //set a footer at the bottom of the tableView
         switch(section) {
         case 1:return ""
         case 2:return ""
@@ -67,7 +67,7 @@ class WorkoutListTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case 1:
             switch indexPath.row {
@@ -81,7 +81,7 @@ class WorkoutListTableViewController: UITableViewController {
             break;
         }
         
-    }
+    }*/
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 20.0
@@ -91,7 +91,7 @@ class WorkoutListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! WorkoutListTableViewCell
 
-        // Configure the cell...
+        // configure workoutLabel text based on the exercise type selected
         switch workoutType {
         case 1:
             switch indexPath.row {
@@ -133,7 +133,7 @@ class WorkoutListTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        //pass workoutType data to the SetRepsTableViewController
         let DestViewController : SetRepsTableViewController = segue.destinationViewController as! SetRepsTableViewController
         DestViewController.workoutType = workoutType
     }

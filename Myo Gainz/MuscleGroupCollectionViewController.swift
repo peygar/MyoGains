@@ -39,21 +39,16 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return fitnessArray.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MuscleGroupsCollectionViewCell
-        
-        cell.imageView?.image = fitnessArray[indexPath.row]
+       
+        //uncomment this once an image set is loaded
+        //cell.imageView?.image = fitnessArray[indexPath.row]
         
         cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
         return cell
@@ -61,13 +56,13 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
+        //set the size of each collectionView cell (100 px x 100 px)
         return CGSizeMake(100, 100)
         
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath){
-        
+        //perform segue when collectionView cell selected
         self.performSegueWithIdentifier("workoutList", sender: self)
         
     }
