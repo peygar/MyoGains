@@ -525,6 +525,7 @@
 				A996AA6A1C53C60B00C4432E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A996AA6B1C53C60B00C4432E /* Build configuration list for PBXNativeTarget "Myo GainzTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +534,7 @@
 				A996AA6D1C53C60B00C4432E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A996AA6E1C53C60B00C4432E /* Build configuration list for PBXNativeTarget "Myo GainzUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +543,7 @@
 				A996AA701C53C60B00C4432E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -13,7 +13,13 @@ class ViewController: TLMSettingsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChange", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
+        
+        // Data notifications are received through NSNotificationCenter.
+        // Posted whenever a TLMMyo connects
+
+        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChange:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
+        
+        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceiveOrientationEvent:", name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,9 +31,24 @@ class ViewController: TLMSettingsViewController {
         navigationController?.pushViewController(self, animated: true)
     }
     
+    func didConnectDevice (notification : NSNotification) {
+        // Access the connected device.
+        let myo = notification.userInfo![kTLMKeyMyo]
+        print("HI")
+        print("Connected to \(myo!.name)")
+    }
+    
     func didReceivePoseChange (notification: NSNotification) {
         let pose = notification.userInfo![kTLMKeyPose]
-        print (pose)
+        print ("Pose \(pose)")
+        
+    }
+    
+    func didReceiveOrientationEvent (notification : NSNotification) {
+        let orientation = notification.userInfo![kTLMKeyOrientationEvent]
+        if let or = orientation{
+            print ("Orientation \(or)")
+        }
     }
 
 
