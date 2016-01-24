@@ -11,5 +11,12 @@ import UIKit
 class MuscleGroupsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        imageView = UIImageView(frame: frame)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }

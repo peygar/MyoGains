@@ -67,8 +67,7 @@ class WorkoutListTableViewController: UITableViewController {
         }
     }
 
-
-    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  /*  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case 1:
             switch indexPath.row {
@@ -80,27 +79,28 @@ class WorkoutListTableViewController: UITableViewController {
             }
         default:
             break;
-        }*/
-        
+
+        }
 
     
-    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    switch indexPath.section {
-    case 1:
-    switch indexPath.row {
-    case 1:
-    performSegueWithIdentifier("workout1", sender: self)
-    default:
-    break;
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        switch indexPath.section {
+            case 1:
+                switch indexPath.row {
+                case 1:
+                    performSegueWithIdentifier("workout1", sender: self)
+                default:
+                    break;
     
+                }
+            default:
+                break;
+        }
+
     }
-    default:
-    break;
-    }
-    
->>>>>>> Stashed changes
-    }*/
-    
+    */
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 20.0
     }
