@@ -11,11 +11,29 @@ import UIKit
 class PumpingViewController: UIViewController {
     
     @IBOutlet var repsCounter: UILabel!
+    
+    @IBOutlet var finishedLabel: UILabel!
+    
+    private var press: Press
+    
+    private var doneLifting: Bool
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        doneLifting = false
+        press = Press(g: 4, vc1: self)
+        finishedLabel.hidden = true
+        
+        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceiveAccelerometerEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
+        
+        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChangedEvent:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +62,38 @@ class PumpingViewController: UIViewController {
             }
             catch {/* error handling here */}
         }
+    }
+    
+    func didReceiveAccelerometerEvent (notification: NSNotification) {
+        press.determineDirection(notification)
+    }
+    
+    func didReceivePoseChangedEvent (notification: NSNotification) {
+        if (notification.userInfo![kTLMKeyPose] as! TLMPoseType == TLMPoseType.Fist && !doneLifting) {
+            //user starts grabbing bar
+            press.startGrabbing()
+        }
         
+        if (notification.userInfo![kTLMKeyPose] as! TLMPoseType == TLMPoseType.WaveIn) {
+            //wave in gesture. User does another set
+            resetPress()
+        }
+    }
+    
+    func sendVibration (length: TLMVibrationLength) {
+        TLMHub.sharedHub().myoDevices()[0].vibrateWithLength(length)
+    }
+    
+    func finishLifting () {
+        sendVibration(TLMVibrationLength.Long)
+        doneLifting = true
+        finishedLabel.hidden = false
+    }
+    
+    func resetPress() {
+        doneLifting = false
+        finishedLabel.hidden = true
+        press = Press(g: 4, vc1: self)
     }
     
 
@@ -57,5 +106,5 @@ class PumpingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

@@ -11,7 +11,7 @@ import Foundation
 class Press: NSObject {
     
     //delay
-    private let delay :UInt32 = 5
+    private let delay :UInt32 = 4
     
     //physics constants and variables
     private let tolerance : Float = 0.06
@@ -26,21 +26,15 @@ class Press: NSObject {
     private let goal : UInt
     private var counter: UInt
     
-    //myo constant (references)
-    private let myoNotification : NSNotification
-    private let myo : TLMMyo
-    
     //PumpingViewController reference
     private let vc :PumpingViewController
     
     
-    init (g:UInt, mn: NSNotification, vc1: UIViewController) {
+    init (g:UInt, vc1: PumpingViewController) {
         weightsUp = false
         liftingUp = false
         goal = g
         counter = 0
-        myoNotification = mn
-        myo = myoNotification.userInfo![kTLMKeyMyo] as! TLMMyo
         vc = vc1
     }
     
@@ -55,28 +49,19 @@ class Press: NSObject {
         }
         
         //Vibrate twice to let user know the set is starting
-        myo.vibrateWithLength(TLMVibrationLength.Short)
-        myo.vibrateWithLength(TLMVibrationLength.Short)
+        vc.sendVibration(TLMVibrationLength.Short)
+        vc.sendVibration(TLMVibrationLength.Short)
         
         //start lifting
         liftingUp = true
         print("loop starts")
-        repeat {
-            determineDirection()
-        }
-            while (counter < goal);
-        print("loop ends")
-        reset()
-        
-        //One long vibration to let user know the set is complete
-        myo.vibrateWithLength(TLMVibrationLength.Long)
     }
     
-    private func determineDirection () {
+    func determineDirection (notification :NSNotification) {
         var direction :Int //1=up; -1=down; 0=stable
         
         //Determine direction of motion. Accounts error resulted from shaking
-        let acc = getAccel()
+        let acc = getAccel(notification)
         
         
         if (acc > tolerance) {
@@ -107,26 +92,22 @@ class Press: NSObject {
                 consecutiveDown = maxConsecutiveDown
             }
         }
-    }
-    
-    //resets certain variables to their initial states
-    private func reset () {
-        weightsUp = false
-        liftingUp = false
-        counter = 0
-        consecutiveDown = maxConsecutiveDown
+        
     }
     
     //increase counter in the Press object and the label in vc
     private func addOne () {
         counter++
         vc.repsCounter.text = "\(counter)"
+        if (counter >= goal) {
+            vc.finishLifting()
+        }
     }
     
     //returns the acceleration given by Myo
-    private func getAccel () -> Float {
+    private func getAccel (notification: NSNotification) -> Float {
         //calculations to return a nicely formatted acceleration to work with
-        var x = myoNotification.userInfo![kTLMKeyAccelerometerEvent]!.vector.x + relativityOffset
+        var x = notification.userInfo![kTLMKeyAccelerometerEvent]!.vector.x + relativityOffset
         x *= 100
         x = floor(x + 0.5) / 100.0
         return x
