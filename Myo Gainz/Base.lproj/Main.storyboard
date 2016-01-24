@@ -276,11 +276,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-sw-P0Q">
+                                <rect key="frame" x="183" y="295" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="RepsCounter" destination="BsO-A5-bAf" id="Bmy-EJ-0vL"/>
+                        <outlet property="finishedLabel" destination="Rkd-sw-P0Q" id="54k-hv-2wB"/>
+                        <outlet property="repsCounter" destination="BsO-A5-bAf" id="h1c-XU-1N9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBr-GF-oqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,6 +307,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qne-Dt-r1d"/>
+                        <segue destination="QNI-MT-ImR" kind="show" identifier="goToPumping" id="Hwg-zZ-AQ9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWW-aQ-1Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
