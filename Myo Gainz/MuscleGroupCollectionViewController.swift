@@ -62,8 +62,6 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         cell.imageView?.image = fitnessArray[indexPath.row]
         cell.backgroundColor = UIColor(white: 255, alpha: 1)
         cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
-
-        collectionView.selectItemAtIndexPath(indexPath, animated:false, scrollPosition:.None)
         
         return cell
         
@@ -71,7 +69,9 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         //set the size of each collectionView cell (100 px x 100 px)
-        return CGSizeMake(100, 100)
+        let screenRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenRect.size.width
+        return CGSizeMake(screenWidth/2.0 - 5, screenWidth/2.0 - 50)
         
     }
     

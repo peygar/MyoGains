@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 class WorkoutsTableView: UITableViewController {
 
     var workouts : [String]?
     var workoutType : ExerciseType?
-    
+
     enum ExerciseType : String {
         case Chest = "Chest"
         case Legs = "Legs"
@@ -49,14 +50,13 @@ class WorkoutsTableView: UITableViewController {
         
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("banana", forIndexPath: indexPath)
-        
-        cell.textLabel?.text = workouts?[indexPath.row]
-
-        return cell
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
     }
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-         return "Section \(section)"
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("workoutCell", forIndexPath: indexPath)
+        cell.textLabel?.text = workouts![indexPath.row]
+        cell.detailTextLabel?.text = "Sets 3, Reps 5"
+        return cell
     }
 }
