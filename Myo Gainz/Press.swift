@@ -57,16 +57,15 @@ class Press: NSObject {
         //Determine direction of motion. Accounts error resulted from shaking
         let acc = getAccel(notification)
         
-        //print(acc)
         if (acc > tolerance) {
             direction = -1
             consecutiveDown--
-            print ("Moving down")
+            print ("Moving down with \(acc)")
         }
         else if (acc < -tolerance) {
             direction = 1
             consecutiveDown--
-            print ("Moving up")
+            print ("Moving up with \(acc)")
         }
         else {
             direction = 0
