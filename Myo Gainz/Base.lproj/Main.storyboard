@@ -28,7 +28,42 @@
             </objects>
             <point key="canvasLocation" x="1204" y="59"/>
         </scene>
-        <!--Title-->
+        <!--Workouts-->
+        <scene sceneID="OJ6-D1-Tna">
+            <objects>
+                <collectionViewController id="w3f-Zz-i60" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cCN-YQ-YM2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UZp-rJ-qe2">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="40"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fdV-cU-7Z8" customClass="MuscleGroupsCollectionViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                <rect key="frame" x="40" y="40" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="w3f-Zz-i60" id="bN6-BR-JL1"/>
+                            <outlet property="delegate" destination="w3f-Zz-i60" id="Pgc-6U-fkZ"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Workouts" id="nEM-DA-1iK"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9d-Ju-hfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="1652"/>
+        </scene>
+        <!--Workouts Table View-->
         <scene sceneID="XVe-vp-FX0">
             <objects>
                 <tableViewController id="7bI-WB-ZIm" customClass="WorkoutsTableView" customModule="Myo_Gainz" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,6 +87,50 @@
                             <outlet property="delegate" destination="7bI-WB-ZIm" id="HDU-G8-fQe"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="QNI-MT-ImR" kind="show" identifier="startExercise" id="Zek-rg-NrR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uj-zj-7as" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224" y="994"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Ok8-dI-Pa0">
+            <objects>
+                <tableViewController id="Uen-4B-ph7" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="24" sectionFooterHeight="18" id="22h-X8-TfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="PFk-Kv-Ho4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="n6o-rn-s03" rowHeight="75" style="IBUITableViewCellStyleDefault" id="C3b-B2-PXf" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C3b-B2-PXf" id="Y5j-v4-S06">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n6o-rn-s03">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="74"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Uen-4B-ph7" id="u3Y-BO-FTq"/>
+                            <outlet property="delegate" destination="Uen-4B-ph7" id="pQh-H9-ANW"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Title" id="mty-VP-aHk">
                         <barButtonItem key="rightBarButtonItem" title="Set Reps" id="Vtl-3B-iu3">
                             <connections>
@@ -62,12 +141,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="setRepsButton" destination="Vtl-3B-iu3" id="T3d-dL-A58"/>
-                        <segue destination="QNI-MT-ImR" kind="show" identifier="startExercise" id="tgZ-12-kcM"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3uj-zj-7as" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uj-zj-7ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="1666"/>
+            <point key="canvasLocation" x="1320" y="2014"/>
         </scene>
         <!--Title-->
         <scene sceneID="QDU-0a-MkL">
@@ -81,7 +159,7 @@
                             <tableViewSection id="tgL-Zl-8c7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repCell" id="xdT-xV-ED3" customClass="setRepsTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdT-xV-ED3" id="7WG-n9-NHt">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -129,7 +207,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1H-2q-l5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008" y="1658"/>
+            <point key="canvasLocation" x="2092" y="2002"/>
         </scene>
         <!--Muscle Group Collection View Controller-->
         <scene sceneID="Ekx-SG-AWs">
@@ -196,36 +274,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJr-s7-DXd">
-                                <rect key="frame" x="246" y="169" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJr-s7-DXd">
+                                <rect key="frame" x="269" y="161" width="63" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsO-A5-bAf">
-                                <rect key="frame" x="275" y="224" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsO-A5-bAf">
+                                <rect key="frame" x="291" y="203" width="19" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-sw-P0Q">
-                                <rect key="frame" x="183" y="295" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grab bar and wait for vibration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-Qt-Lga">
+                                <rect key="frame" x="113" y="101" width="375" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nmX-4Z-Oub"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-sw-P0Q">
+                                <rect key="frame" x="202" y="339" width="185" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BsO-A5-bAf" firstAttribute="top" secondItem="CJr-s7-DXd" secondAttribute="bottom" constant="8" symbolic="YES" id="2Y6-O8-Pfe"/>
+                            <constraint firstItem="BsO-A5-bAf" firstAttribute="centerX" secondItem="CJr-s7-DXd" secondAttribute="centerX" id="NOC-VT-mKH"/>
+                            <constraint firstItem="CJr-s7-DXd" firstAttribute="top" secondItem="zVX-Qt-Lga" secondAttribute="bottom" constant="25" id="Vaz-0l-cTo"/>
+                            <constraint firstItem="h5S-cE-JCx" firstAttribute="top" secondItem="Rkd-sw-P0Q" secondAttribute="bottom" constant="201" id="nUk-MW-xZI"/>
+                            <constraint firstItem="CJr-s7-DXd" firstAttribute="centerX" secondItem="zVX-Qt-Lga" secondAttribute="centerX" id="pwu-Pe-uL6"/>
+                            <constraint firstItem="zVX-Qt-Lga" firstAttribute="top" secondItem="DbL-Nz-wtK" secondAttribute="bottom" constant="37" id="sqO-Qc-BWN"/>
+                            <constraint firstItem="zVX-Qt-Lga" firstAttribute="leading" secondItem="JlZ-oL-jKP" secondAttribute="leadingMargin" constant="93" id="wUw-JE-fFX"/>
+                            <constraint firstItem="zVX-Qt-Lga" firstAttribute="centerX" secondItem="Rkd-sw-P0Q" secondAttribute="centerX" constant="6" id="yDW-xh-Tzj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="RepsCounter" destination="BsO-A5-bAf" id="Bmy-EJ-0vL"/>
                         <outlet property="finishedLabel" destination="Rkd-sw-P0Q" id="54k-hv-2wB"/>
+                        <outlet property="grabBarLabel" destination="zVX-Qt-Lga" id="oZh-Gc-0KB"/>
                         <outlet property="repsCounter" destination="BsO-A5-bAf" id="h1c-XU-1N9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBr-GF-oqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3024" y="1041"/>
+            <point key="canvasLocation" x="3032" y="1059"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jzw-Fo-XTp">

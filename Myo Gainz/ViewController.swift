@@ -17,16 +17,16 @@ class ViewController: TLMSettingsViewController {
         
         // Data notifications are received through NSNotificationCenter.
         // Posted whenever a TLMMyo connects
-
+        
         //REMOVE THE FOLLOWING LINE AFTER TESTING!!
         //performSegueWithIdentifier("myoConnected", sender: self)
-        performSegueWithIdentifier("myoConnected", sender: self)
+
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
         
         //Do not use the following line unless testing PumpingVC
         //performSegueWithIdentifier("goToPumping", sender: self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,6 +45,6 @@ class ViewController: TLMSettingsViewController {
         }
         
     }
-
-
+    
+    
 }

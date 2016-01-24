@@ -11,7 +11,7 @@ import Foundation
 class Press: NSObject {
     
     //delay
-    private let delay :UInt32 = 4
+    private let delay :UInt32 = 6
     
     //physics constants and variables
     private let tolerance : Float = 0.06
@@ -21,7 +21,6 @@ class Press: NSObject {
     
     
     //general constants and variables
-    private var weightsUp: Bool //indicates the user has grabbed weights
     private var liftingUp: Bool //indicates the weights are being lifted upward
     private let goal : UInt
     private var counter: UInt
@@ -31,7 +30,6 @@ class Press: NSObject {
     
     
     init (g:UInt, vc1: PumpingViewController) {
-        weightsUp = false
         liftingUp = false
         goal = g
         counter = 0
@@ -42,19 +40,15 @@ class Press: NSObject {
     //Should be called when pose is changed to "fist"
     //Main function that keeps the loop running and checks for downward motion
     func startGrabbing () {
-        if (!weightsUp) {
-            weightsUp = true
-            //pause program
-            sleep(delay)
-        }
-        
+        vc.grabBarLabel.hidden = true
         //Vibrate twice to let user know the set is starting
         vc.sendVibration(TLMVibrationLength.Short)
         vc.sendVibration(TLMVibrationLength.Short)
         
         //start lifting
-        liftingUp = true
-        print("loop starts")
+        //liftingUp = true
+        vc.weightsUpYes()
+        print("Lifting started")
     }
     
     func determineDirection (notification :NSNotification) {
@@ -63,7 +57,7 @@ class Press: NSObject {
         //Determine direction of motion. Accounts error resulted from shaking
         let acc = getAccel(notification)
         
-        
+        //print(acc)
         if (acc > tolerance) {
             direction = -1
             consecutiveDown--
@@ -85,12 +79,11 @@ class Press: NSObject {
             if (liftingUp && direction == -1) {
                 liftingUp = false
                 addOne()
-                consecutiveDown = maxConsecutiveDown
             }
             else if (!liftingUp && direction == 1) {
                 liftingUp = true
-                consecutiveDown = maxConsecutiveDown
             }
+            consecutiveDown = maxConsecutiveDown
         }
         
     }
@@ -100,6 +93,7 @@ class Press: NSObject {
         counter++
         vc.repsCounter.text = "\(counter)"
         if (counter >= goal) {
+            print("Lifting finished")
             vc.finishLifting()
         }
     }
