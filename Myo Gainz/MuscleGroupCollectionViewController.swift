@@ -1,3 +1,4 @@
+
 //
 //  MuscleGroupCollectionViewController.swift
 //  Myo Gainz
@@ -43,7 +44,7 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         return fitnessArray.count
     }
     
-    func getExcerciseType(type : String) -> WorkoutListTableViewController.ExerciseType {
+    func getExcerciseType(type : String) -> WorkoutsTableView.ExerciseType {
         if (type == "Chest") {
             return .Chest
         } else if (type == "Arms"){
@@ -80,21 +81,19 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         //perform segue when collectionView cell selected
-        let destination = WorkoutListTableViewController()
-        destination.setExerciseType(getExcerciseType(workoutArray[indexPath.row]))
-        navigationController?.pushViewController(destination, animated: true)
-//        self.performSegueWithIdentifier("workoutList", sender: self)
+//        let destination = WorkoutsTableView()
+//        destination.setExerciseType(getExcerciseType(workoutArray[indexPath.row]))
+//        navigationController?.pushViewController(destination, animated: true)
+        self.performSegueWithIdentifier("WorkoutList", sender: self)
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
         let indexPath = indexPaths[0] as NSIndexPath
-        
-        let DestViewController : WorkoutListTableViewController = segue.destinationViewController as! WorkoutListTableViewController
-        DestViewController.workoutType = indexPath.row
-        DestViewController.workoutArray = workoutArray
-    }*/
+        let DestViewController : WorkoutsTableView = segue.destinationViewController as! WorkoutsTableView
+        DestViewController.workoutType = getExcerciseType(workoutArray[indexPath.row])
+    }
     
     // MARK: UICollectionViewDelegate
     

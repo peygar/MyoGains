@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6C1E6BF81C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */; };
 		6C1E6BFA1C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */; };
-		6C1E6BFC1C542E0B006C5C50 /* WorkoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */; };
-		6C1E6C001C542E49006C5C50 /* WorkoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */; };
 		6C1E6C051C542E97006C5C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1E6C031C542E97006C5C50 /* Main.storyboard */; };
 		6C1E6C071C543268006C5C50 /* SetRepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */; };
 		6C1E6C091C54349C006C5C50 /* setRepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */; };
@@ -27,6 +25,7 @@
 		A996AA771C53C83600C4432E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A996AA761C53C83600C4432E /* SystemConfiguration.framework */; };
 		A996AA781C53C83B00C4432E /* MyoKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = A996AA711C53C62900C4432E /* MyoKit.framework */; };
 		A996AA7E1C54181700C4432E /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA7D1C54181700C4432E /* Press.swift */; };
+		F34C62A21C54C8E0006A62F9 /* WorkoutsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C62A11C54C8E0006A62F9 /* WorkoutsTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +48,6 @@
 /* Begin PBXFileReference section */
 		6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroupCollectionViewController.swift; sourceTree = "<group>"; };
 		6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroupsCollectionViewCell.swift; sourceTree = "<group>"; };
-		6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewCell.swift; sourceTree = "<group>"; };
-		6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListTableViewController.swift; sourceTree = "<group>"; };
 		6C1E6C041C542E97006C5C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRepsTableViewController.swift; sourceTree = "<group>"; };
 		6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setRepsTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,6 +70,7 @@
 		A996AA741C53C83000C4432E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A996AA761C53C83600C4432E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A996AA7D1C54181700C4432E /* Press.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
+		F34C62A11C54C8E0006A62F9 /* WorkoutsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +134,9 @@
 				6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */,
 				6C1E6C031C542E97006C5C50 /* Main.storyboard */,
 				A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */,
-				6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */,
+				F34C62A11C54C8E0006A62F9 /* WorkoutsTableView.swift */,
 				6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */,
 				6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */,
-				6C1E6BFB1C542E0B006C5C50 /* WorkoutListTableViewCell.swift */,
 				A996AA7D1C54181700C4432E /* Press.swift */,
 				A996AA4A1C53C60B00C4432E /* Assets.xcassets */,
 				A996AA4C1C53C60B00C4432E /* LaunchScreen.storyboard */,
@@ -301,13 +298,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A996AA491C53C60B00C4432E /* Myo_Gainz.xcdatamodeld in Sources */,
+				F34C62A21C54C8E0006A62F9 /* WorkoutsTableView.swift in Sources */,
 				6C1E6BF81C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift in Sources */,
 				A996AA7E1C54181700C4432E /* Press.swift in Sources */,
-				6C1E6BFC1C542E0B006C5C50 /* WorkoutListTableViewCell.swift in Sources */,
 				6C1E6C071C543268006C5C50 /* SetRepsTableViewController.swift in Sources */,
 				6C1E6BFA1C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift in Sources */,
 				6C1E6C091C54349C006C5C50 /* setRepsTableViewCell.swift in Sources */,
-				6C1E6C001C542E49006C5C50 /* WorkoutListTableViewController.swift in Sources */,
 				A996AA431C53C60B00C4432E /* ViewController.swift in Sources */,
 				A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */,
 				A916751B1C5491C900DCD4E0 /* PumpingViewController.swift in Sources */,
