@@ -11,6 +11,7 @@ import Foundation
 
 class WorkoutsTableView: UITableViewController {
 
+    @IBOutlet weak var setRepsButton: UIBarButtonItem!
     var workouts : [String]?
     var workoutType : ExerciseType?
 
@@ -58,5 +59,13 @@ class WorkoutsTableView: UITableViewController {
         cell.textLabel?.text = workouts![indexPath.row]
         cell.detailTextLabel?.text = "Sets 3, Reps 5"
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("startExercise", sender: self)
+    }
+    
+    @IBAction func setReps(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("setReps", sender: self)
     }
 }
