@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Myo Gainz/AppDelegate.swift"
-            timestampString = "475293084.359739"
+            timestampString = "475331972.492893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "managedObjectModel"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "applicationDocumentsDirectory"
             landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Myo Gainz/AppDelegate.swift"
-            timestampString = "475293095.261643"
+            timestampString = "475331972.492893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "persistentStoreCoordinator"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "managedObjectModel"
             landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>

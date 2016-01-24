@@ -21,6 +21,7 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
 //        workoutArray = ["Shoulders", "Chest", "Back", "Arms", "Legs", "Abs"]
         fitnessArray = [UIImage(named: "shoulders")!, UIImage(named: "chest")!, UIImage(named: "back")!, UIImage(named: "biceps")!, UIImage(named: "triceps")!, UIImage(named: "legs")!]
         workoutArray = ["Shoulders", "Chest", "Back", "Biceps", "Triceps", "Legs"]
+                navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(netHex:0x00e5e6)]
     }
     
     override func didReceiveMemoryWarning() {

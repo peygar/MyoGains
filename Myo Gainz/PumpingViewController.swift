@@ -37,7 +37,7 @@ class PumpingViewController: UIViewController {
         doneLifting = false
         weightsUp = false
         press = Press (g: goal!, vc1: self)
-        repsCounter.text = "0"
+        repsCounter.text = "0/5"
         setCounterLabel.text = "1"
         finishedLabel.hidden = true
         setCounter = 0

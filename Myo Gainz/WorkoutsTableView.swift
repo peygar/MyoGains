@@ -30,7 +30,7 @@ class WorkoutsTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        workouts = ["Shoulder Press"]
+        workouts = ["Shoulder Press", "Shrugs", "Lateral Raises", "Front Raises",  "Upright Rows"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
