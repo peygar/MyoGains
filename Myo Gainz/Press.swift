@@ -91,7 +91,7 @@ class Press: NSObject {
     //increase counter in the Press object and the label in vc
     private func addOne () {
         counter++
-        vc.repsCounter.text = "\(counter)"
+        vc.repsCounter.text = "\(counter) / \(goal)"
         if (counter >= goal) {
             print("Lifting finished")
             vc.finishLifting()

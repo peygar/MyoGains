@@ -12,6 +12,8 @@ class PumpingViewController: UIViewController {
     
     @IBOutlet var repsCounter: UILabel!
     
+    @IBOutlet var setCounterLabel: UILabel!
+    
     @IBOutlet var finishedLabel: UILabel!
     
     @IBOutlet var grabBarLabel: UILabel!
@@ -36,6 +38,7 @@ class PumpingViewController: UIViewController {
         weightsUp = false
         press = Press (g: goal!, vc1: self)
         repsCounter.text = "0"
+        setCounterLabel.text = "1"
         finishedLabel.hidden = true
         setCounter = 0
 
@@ -60,6 +63,8 @@ class PumpingViewController: UIViewController {
         let file = "file.txt" 
 
         setCounter!++
+        
+        setCounterLabel.text = "\(setCounter)"
         
         let text = "\(setCounter) sets of \((repsCounter.text)!) reps on \(formatter.stringFromDate(NSDate()))"
 
