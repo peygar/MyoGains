@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
 
 class PumpingViewController: UIViewController {
     
@@ -14,6 +16,8 @@ class PumpingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let workout = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: self.managedObjectContext) as! PumpingWorkout //how the hell do you make this unique?
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +25,16 @@ class PumpingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func finishedWorkout() {
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+        
     }
     
 
