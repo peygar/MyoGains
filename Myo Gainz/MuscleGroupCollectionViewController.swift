@@ -43,12 +43,27 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         return fitnessArray.count
     }
     
+    func getExcerciseType(type : String) -> WorkoutListTableViewController.ExerciseType {
+        if (type == "Chest") {
+            return .Chest
+        } else if (type == "Arms"){
+            return .Arms
+        } else if (type == "Legs") {
+            return .Legs
+        } else {
+            return .Chest
+        }
+    }
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! MuscleGroupsCollectionViewCell
         //uncomment this once an image set is loaded
         cell.imageView?.image = fitnessArray[indexPath.row]
         cell.backgroundColor = UIColor(white: 255, alpha: 1)
         cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
+
+        collectionView.selectItemAtIndexPath(indexPath, animated:false, scrollPosition:.None)
+        
         return cell
         
     }
@@ -59,13 +74,19 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         
     }
     
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath){
-        //perform segue when collectionView cell selected
-        self.performSegueWithIdentifier("workoutList", sender: self)
-        
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated:false)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+        //perform segue when collectionView cell selected
+        let destination = WorkoutListTableViewController()
+        destination.setExerciseType(getExcerciseType(workoutArray[indexPath.row]))
+        navigationController?.pushViewController(destination, animated: true)
+//        self.performSegueWithIdentifier("workoutList", sender: self)
+    }
+    
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
         let indexPath = indexPaths[0] as NSIndexPath
@@ -73,7 +94,7 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         let DestViewController : WorkoutListTableViewController = segue.destinationViewController as! WorkoutListTableViewController
         DestViewController.workoutType = indexPath.row
         DestViewController.workoutArray = workoutArray
-    }
+    }*/
     
     // MARK: UICollectionViewDelegate
     

@@ -10,25 +10,33 @@ import UIKit
 
 class WorkoutListTableViewController: UITableViewController {
     
-    var workoutType = Int()
-    var workoutArray = [String()]
-    /*enum ExerciseType {
-    case chest
-    case shoulder
-    case leg
-    }*/
+    var workoutType : ExerciseType?
+    var workouts : [String]?
+    
+    enum ExerciseType : String {
+        case Chest = "Chest"
+        case Arms = "Arms"
+        case Legs = "Legs"
+    }
+
+
+    
+    func setExerciseType(type: ExerciseType){
+        workoutType = type
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        workouts = ["Chest Press"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.title = workoutArray[workoutType]
-        
+        if let fuck = workoutType {
+            self.navigationItem.title = fuck.rawValue
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,25 +47,25 @@ class WorkoutListTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return (workouts?.count)!
     }
     
-    override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
+    /*override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
         //set a header at the top of each section
         switch(section) {
-            
+    
         case 1:return "Interval 1"
         case 2:return "Interval 2"
         case 3:return "Interval 3"
         default :return ""
         }
-    }
+    }*/
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    /*override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         //set a footer at the bottom of the tableView
         switch(section) {
         case 1:return ""
@@ -65,94 +73,74 @@ class WorkoutListTableViewController: UITableViewController {
         case 3:return "Tap your fingers twice to skip exercises"
         default :return ""
         }
-    }
+    }*/
 
-  /*  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.section {
-        case 1:
-            switch indexPath.row {
-            case 1:
-                performSegueWithIdentifier("workout1", sender: self)
-            default:
-                break;
-                
-            }
-        default:
-            break;
-        }
-
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
-        switch indexPath.section {
-            case 1:
-                switch indexPath.row {
-                case 1:
-                    performSegueWithIdentifier("workout1", sender: self)
-                default:
-                    break;
-    
-                }
-            default:
-                break;
-        }
-
-    }
-    */
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 20.0
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! WorkoutListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("workoutCell", forIndexPath: indexPath) as! WorkoutListTableViewCell
+//        let cell : WorkoutListTableViewCell
+//        if let myCell = tempCell {
+//            cell = myCell as! WorkoutListTableViewCell
+//        } else {
+//            cell = WorkoutListTableViewCell()
+//        }
+        
         // configure workoutLabel text based on the exercise type selected
-        switch workoutType {
-        case 1:
-            switch indexPath.row {
-            case 1:
-                cell.detailTextLabel?.text = "Shoulder Press"
-            case 2:
-                cell.detailTextLabel?.text = "Lateral Raises"
-            case 3:
-                cell.detailTextLabel?.text = "Front Raises"
-            default:
-                break;
-            }
-        case 2:
-            switch indexPath.row {
-            case 1:
-                cell.detailTextLabel?.text = "Shoulder Press"
-            case 2:
-                cell.detailTextLabel?.text = "Lateral Raises"
-            case 3:
-                cell.detailTextLabel?.text = "Front Raises"
-            default:
-                break;
-            }
-        case 3:
-            switch indexPath.row {
-            case 1:
-                cell.detailTextLabel?.text = "Shoulder Press"
-            case 2:
-                cell.detailTextLabel?.text = "Lateral Raises"
-            case 3:
-                cell.detailTextLabel?.text = "Front Raises"
-            default:
-                break;
-            }
-        default:
-            break;
-        }
+//        if let type = workoutType{
+            cell.titleLabel?.text = workouts![indexPath.row]
+//        }
+//        switch type {
+//            case .Chest:
+//                switch indexPath.row {
+//                case 0:
+//                    cell.titleLabel.text = "Shoulder Press"
+//                    break;
+//                case 1:
+//                    cell.titleLabel.text = "Lateral Raises"
+//                    break;
+//                case 2:
+//                    cell.titleLabel.text = "Front Raises"
+//                    break;
+//                default:
+//                    break;
+//                }
+//            case .Arms:
+//                switch indexPath.row {
+//                case 0:
+//                    cell.titleLabel.text = "Dick Press"
+//                case 1:
+//                    cell.titleLabel.text = "Dick Raises"
+//                case 2:
+//                    cell.titleLabel.text = "Front Dick"
+//                default:
+//                    break;
+//                }
+//            case .Legs:
+//                switch indexPath.row {
+//                case 0:
+//                    cell.titleLabel.text = "Shoulder Press"
+//                case 1:
+//                    cell.titleLabel.text = "Lateral Raises"
+//                case 2:
+//                    cell.titleLabel.text = "Front Raises"
+//                default:
+//                    break;
+//                }
+//
+//            }
+//        }
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //pass workoutType data to the SetRepsTableViewController
         let DestViewController : SetRepsTableViewController = segue.destinationViewController as! SetRepsTableViewController
         DestViewController.workoutType = workoutType
-    }
+    }*/
     
     
     /*

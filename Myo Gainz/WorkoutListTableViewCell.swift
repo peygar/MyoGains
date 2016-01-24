@@ -1,4 +1,4 @@
-//
+///Users/Peyman/Documents/uofthacks/repo/MyoGains/Myo Gainz.xcodeproj
 //  WorkoutListTableViewCell.swift
 //  Myo Gainz
 //
@@ -11,9 +11,22 @@ import UIKit
 class WorkoutListTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var descLabel: UILabel!
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        titleLabel = UILabel()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel = UILabel()
         // Initialization code
     }
 

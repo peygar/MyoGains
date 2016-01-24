@@ -58,9 +58,6 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Workouts" id="nEM-DA-1iK"/>
-                    <connections>
-                        <segue destination="Uen-4B-ph7" kind="show" identifier="workoutList" id="3ca-wC-JJn"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9d-Ju-hfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +66,7 @@
         <!--Title-->
         <scene sceneID="Ok8-dI-Pa0">
             <objects>
-                <tableViewController id="Uen-4B-ph7" customClass="WorkoutListTableViewController" customModule="Myo_Gainz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Uen-4B-ph7" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="24" sectionFooterHeight="18" id="22h-X8-TfZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,18 +74,23 @@
                         <sections>
                             <tableViewSection id="PFk-Kv-Ho4">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="cell" textLabel="U5a-TQ-hDI" style="IBUITableViewCellStyleDefault" id="wtd-jR-JeN" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="C3b-B2-PXf" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtd-jR-JeN" id="WX9-u9-bIi">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C3b-B2-PXf" id="Y5j-v4-S06">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U5a-TQ-hDI">
-                                                    <rect key="frame" x="15" y="0.0" width="546" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bub-yl-Ixe">
+                                                    <rect key="frame" x="8" y="8" width="119" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNw-Nu-cRo" customClass="WorkoutListViewCell">
+                                                    <rect key="frame" x="8" y="45" width="328" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -113,6 +115,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94S-Io-kzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="1658"/>
+        </scene>
+        <!--Workout List Table View Controller-->
+        <scene sceneID="JO3-DH-pBm">
+            <objects>
+                <tableViewController id="lXd-M6-xr9" customClass="WorkoutListTableViewController" customModule="Myo_Gainz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="gOM-Ov-HVN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" rowHeight="63" id="093-Wv-b4t" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="093-Wv-b4t" id="OVM-th-MVN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="62.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64K-fP-x84">
+                                            <rect key="frame" x="16" y="8" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decsription " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xue-NB-0hr">
+                                            <rect key="frame" x="8" y="33" width="232" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descLabel" destination="Xue-NB-0hr" id="par-Dq-oqX"/>
+                                    <outlet property="titleLabel" destination="64K-fP-x84" id="ob0-oL-Nzl"/>
+                                    <outlet property="titleLable" destination="64K-fP-x84" id="9mB-J1-kL9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lXd-M6-xr9" id="Eqd-P5-zXS"/>
+                            <outlet property="delegate" destination="lXd-M6-xr9" id="MEI-Fk-RBm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OS-32-ykI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="2368"/>
         </scene>
         <!--Title-->
         <scene sceneID="QDU-0a-MkL">
@@ -183,7 +232,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dmw-HV-RnQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.63038793103448276" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XRX-vj-Bs9">
                             <size key="itemSize" width="265" height="211"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -250,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEB-59-OWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="764"/>
+            <point key="canvasLocation" x="1932" y="768"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jzw-Fo-XTp">
