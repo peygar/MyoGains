@@ -12,6 +12,7 @@
 		6C1E6C051C542E97006C5C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1E6C031C542E97006C5C50 /* Main.storyboard */; };
 		6C1E6C071C543268006C5C50 /* SetRepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */; };
 		6C1E6C091C54349C006C5C50 /* setRepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */; };
+		6C95B9EB1C54D79A00353050 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C95B9EA1C54D79A00353050 /* TestingViewController.swift */; };
 		A916751B1C5491C900DCD4E0 /* PumpingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */; };
 		A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA401C53C60B00C4432E /* AppDelegate.swift */; };
 		A996AA431C53C60B00C4432E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA421C53C60B00C4432E /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		6C1E6C041C542E97006C5C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRepsTableViewController.swift; sourceTree = "<group>"; };
 		6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setRepsTableViewCell.swift; sourceTree = "<group>"; };
+		6C95B9EA1C54D79A00353050 /* TestingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpingViewController.swift; sourceTree = "<group>"; };
 		A996AA3D1C53C60B00C4432E /* Myo Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo Gainz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A996AA401C53C60B00C4432E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				F34C62A11C54C8E0006A62F9 /* WorkoutsTableView.swift */,
 				6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */,
 				6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */,
+				6C95B9EA1C54D79A00353050 /* TestingViewController.swift */,
 				A996AA7D1C54181700C4432E /* Press.swift */,
 				A996AA4A1C53C60B00C4432E /* Assets.xcassets */,
 				A996AA4C1C53C60B00C4432E /* LaunchScreen.storyboard */,
@@ -304,6 +307,7 @@
 				6C1E6C071C543268006C5C50 /* SetRepsTableViewController.swift in Sources */,
 				6C1E6BFA1C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift in Sources */,
 				6C1E6C091C54349C006C5C50 /* setRepsTableViewCell.swift in Sources */,
+				6C95B9EB1C54D79A00353050 /* TestingViewController.swift in Sources */,
 				A996AA431C53C60B00C4432E /* ViewController.swift in Sources */,
 				A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */,
 				A916751B1C5491C900DCD4E0 /* PumpingViewController.swift in Sources */,
