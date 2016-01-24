@@ -22,16 +22,20 @@ class PumpingViewController: UIViewController {
     
     private var doneLifting: Bool!
     
-    var goal: UInt!
+    var goal: UInt?
     
     private var weightsUp: Bool! //indicates the user has grabbed weights
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let _ = goal {}
+        else {
+            goal = 5
+        }
         doneLifting = false
         weightsUp = false
-        press = Press (g: goal, vc1: self)
+        press = Press (g: goal!, vc1: self)
+        repsCounter.text = "0"
         finishedLabel.hidden = true
         setCounter = 0
 
@@ -118,6 +122,7 @@ class PumpingViewController: UIViewController {
         doneLifting = false
         weightsUp = false
         finishedLabel.hidden = true
+        grabBarLabel.hidden = false
         press = Press(g: goal!, vc1: self)
         repsCounter.text = "0"
     }

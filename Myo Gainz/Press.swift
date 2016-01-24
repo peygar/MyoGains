@@ -40,7 +40,7 @@ class Press: NSObject {
     //Should be called when pose is changed to "fist"
     //Main function that keeps the loop running and checks for downward motion
     func startGrabbing () {
-        
+        vc.grabBarLabel.hidden = true
         //Vibrate twice to let user know the set is starting
         vc.sendVibration(TLMVibrationLength.Short)
         vc.sendVibration(TLMVibrationLength.Short)
