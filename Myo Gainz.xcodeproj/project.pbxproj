@@ -232,7 +232,7 @@
 				TargetAttributes = {
 					A996AA3C1C53C60B00C4432E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 4VYB7XXY46;
+						DevelopmentTeam = 9BY3HQX3RG;
 					};
 					A996AA531C53C60B00C4432E = {
 						CreatedOnToolsVersion = 7.2;
@@ -457,7 +457,7 @@
 				);
 				INFOPLIST_FILE = "Myo Gainz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Myo-Gainz1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Myo-Gainz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "<Myo Gainz>-Bridging-Header.h";
@@ -478,7 +478,7 @@
 				);
 				INFOPLIST_FILE = "Myo Gainz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Myo-Gainz1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Myo-Gainz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "<Myo Gainz>-Bridging-Header.h";
