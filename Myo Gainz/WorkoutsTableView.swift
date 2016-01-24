@@ -16,9 +16,11 @@ class WorkoutsTableView: UITableViewController {
     var workoutType : ExerciseType?
 
     enum ExerciseType : String {
+        case Shoulders = "Shoulders"
         case Chest = "Chest"
-        case Legs = "Legs"
-        case Arms = "Arms"
+        case Back = "Back"
+        case Biceps = "Biceps"
+        case Triceps = "Triceps"
     }
     
     func setExerciseType(type : ExerciseType) {
@@ -27,7 +29,7 @@ class WorkoutsTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        workouts = ["Chest Press"]
+        workouts = ["Shoulder Press"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
