@@ -14,22 +14,17 @@ class PumpingViewController: UIViewController {
     
     @IBOutlet var finishedLabel: UILabel!
     
-    private var press: Press
+    private var press: Press!
     
-    private var doneLifting: Bool
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var doneLifting: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         doneLifting = false
-        press = Press(g: 4, vc1: self)
+        press = Press (g: 4, vc1: self)
         finishedLabel.hidden = true
-        
+
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceiveAccelerometerEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChangedEvent:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
@@ -88,6 +83,7 @@ class PumpingViewController: UIViewController {
         sendVibration(TLMVibrationLength.Long)
         doneLifting = true
         finishedLabel.hidden = false
+        finishedWorkout()
     }
     
     func resetPress() {

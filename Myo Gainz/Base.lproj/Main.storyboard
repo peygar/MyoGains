@@ -22,6 +22,7 @@
                     <navigationItem key="navigationItem" id="Tx6-X0-0RC"/>
                     <connections>
                         <segue destination="NcZ-ZQ-UGV" kind="show" identifier="myoConnected" id="B01-h2-1Lb"/>
+                        <segue destination="QNI-MT-ImR" kind="show" identifier="goToPumping" id="5pP-av-lde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -250,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEB-59-OWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="764"/>
+            <point key="canvasLocation" x="2650" y="418"/>
         </scene>
         <!--Pumping View Controller-->
         <scene sceneID="UdM-e4-Yjh">
@@ -307,7 +308,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qne-Dt-r1d"/>
-                        <segue destination="QNI-MT-ImR" kind="show" identifier="goToPumping" id="Hwg-zZ-AQ9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWW-aQ-1Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
