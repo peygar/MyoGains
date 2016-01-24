@@ -21,6 +21,7 @@ class WorkoutsTableView: UITableViewController {
         case Back = "Back"
         case Biceps = "Biceps"
         case Triceps = "Triceps"
+        case Legs = "Legs"
     }
     
     func setExerciseType(type : ExerciseType) {

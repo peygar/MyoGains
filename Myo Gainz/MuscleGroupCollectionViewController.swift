@@ -19,8 +19,8 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 //        fitnessArray = [UIImage(named: "Shoulders")!, UIImage(named: "Chest")!, UIImage(named: "Back")!, UIImage(named: "Arms")!, UIImage(named: "Legs")!, UIImage(named: "Abs")!]
 //        workoutArray = ["Shoulders", "Chest", "Back", "Arms", "Legs", "Abs"]
-        fitnessArray = [UIImage(named: "shoulders")!, UIImage(named: "chest")!, UIImage(named: "back")!, UIImage(named: "biceps")!, UIImage(named: "triceps")!]
-        workoutArray = ["Shoulders", "Chest", "Back", "Biceps", "Triceps"]
+        fitnessArray = [UIImage(named: "shoulders")!, UIImage(named: "chest")!, UIImage(named: "back")!, UIImage(named: "biceps")!, UIImage(named: "triceps")!, UIImage(named: "legs")!]
+        workoutArray = ["Shoulders", "Chest", "Back", "Biceps", "Triceps", "Legs"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +53,9 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
             return .Back
         } else if (type == "Biceps") {
             return .Biceps
-        }else if (type == "Triceps") {
+        } else if (type == "Triceps") {
+            return .Triceps
+        } else if (type == "Legs") {
             return .Triceps
         } else {
             return .Shoulders
