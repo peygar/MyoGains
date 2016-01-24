@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tx6-X0-0RC"/>
                     <connections>
-                        <segue destination="w3f-Zz-i60" kind="show" identifier="myoConnected" id="CK4-qa-nWv"/>
+                        <segue destination="NcZ-ZQ-UGV" kind="show" identifier="myoConnected" id="B01-h2-1Lb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -42,8 +42,8 @@
                             <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="40"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fdV-cU-7Z8">
-                                <rect key="frame" x="40" y="104" width="200" height="200"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fdV-cU-7Z8" customClass="MuscleGroupsCollectionViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                <rect key="frame" x="40" y="40" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -78,14 +78,14 @@
                             <tableViewSection id="PFk-Kv-Ho4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="cell" textLabel="U5a-TQ-hDI" style="IBUITableViewCellStyleDefault" id="wtd-jR-JeN" customClass="WorkoutListTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtd-jR-JeN" id="WX9-u9-bIi">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U5a-TQ-hDI">
-                                                    <rect key="frame" x="15" y="0.0" width="546" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="546" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,10 +126,10 @@
                             <tableViewSection id="tgL-Zl-8c7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repCell" id="xdT-xV-ED3" customClass="setRepsTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdT-xV-ED3" id="7WG-n9-NHt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DR3-e8-y6F">
@@ -175,6 +175,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1H-2q-l5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008" y="1658"/>
+        </scene>
+        <!--Muscle Group Collection View Controller-->
+        <scene sceneID="Ekx-SG-AWs">
+            <objects>
+                <collectionViewController id="NcZ-ZQ-UGV" customClass="MuscleGroupCollectionViewController" customModule="Myo_Gainz" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dmw-HV-RnQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.63038793103448276" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XRX-vj-Bs9">
+                            <size key="itemSize" width="265" height="211"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="WWV-wE-ERp" customClass="MuscleGroupsCollectionViewCell" customModule="Myo_Gainz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="265" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="265" height="211"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JrN-qQ-Xwu">
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="211"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="JrN-qQ-Xwu" firstAttribute="leading" secondItem="WWV-wE-ERp" secondAttribute="leadingMargin" constant="-8" id="4bI-qV-cKh"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="JrN-qQ-Xwu" secondAttribute="bottom" constant="-8" id="CvE-a3-30c"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="JrN-qQ-Xwu" secondAttribute="trailing" constant="-8" id="lc0-yd-N8j"/>
+                                    <constraint firstItem="JrN-qQ-Xwu" firstAttribute="top" secondItem="WWV-wE-ERp" secondAttribute="topMargin" constant="-8" id="vmU-mx-LK2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="JrN-qQ-Xwu" id="VqX-G8-LBP"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NcZ-ZQ-UGV" id="sEd-Ta-SdN"/>
+                            <outlet property="delegate" destination="NcZ-ZQ-UGV" id="3uD-s8-S1l"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIF-MI-1Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="122"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bee-1G-CY0">

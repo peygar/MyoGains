@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "collectionCell"
 private var workoutArray = [String()]
 private var fitnessArray = [UIImage]()
 
@@ -17,9 +17,10 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fitnessArray = [UIImage(named: "Shoulders")!, UIImage(named: "Chest")!, UIImage(named: "Back")!, UIImage(named: "Arms")!, UIImage(named: "Legs")!, UIImage(named: "Abs")!]
-        workoutArray = ["Shoulders", "Chest", "Back", "Arms", "Legs", "Abs"]
-
+//        fitnessArray = [UIImage(named: "Shoulders")!, UIImage(named: "Chest")!, UIImage(named: "Back")!, UIImage(named: "Arms")!, UIImage(named: "Legs")!, UIImage(named: "Abs")!]
+//        workoutArray = ["Shoulders", "Chest", "Back", "Arms", "Legs", "Abs"]
+        fitnessArray = [UIImage(named: "chest")!, UIImage(named: "arms")!]
+        workoutArray = ["Chest", "Arms"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,11 +46,11 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MuscleGroupsCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! MuscleGroupsCollectionViewCell
        
         //uncomment this once an image set is loaded
-        //cell.imageView?.image = fitnessArray[indexPath.row]
-        
+        cell.imageView?.image = fitnessArray[indexPath.row]
+        cell.backgroundColor = UIColor(white: 255, alpha: 1)
         cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
         return cell
 
