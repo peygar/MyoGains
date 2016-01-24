@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "arms.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "alternate-bicep-curl.png",
       "scale" : "2x"
     },
     {

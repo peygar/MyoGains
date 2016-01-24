@@ -19,8 +19,8 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 //        fitnessArray = [UIImage(named: "Shoulders")!, UIImage(named: "Chest")!, UIImage(named: "Back")!, UIImage(named: "Arms")!, UIImage(named: "Legs")!, UIImage(named: "Abs")!]
 //        workoutArray = ["Shoulders", "Chest", "Back", "Arms", "Legs", "Abs"]
-        fitnessArray = [UIImage(named: "chest")!, UIImage(named: "arms")!]
-        workoutArray = ["Chest", "Arms"]
+        fitnessArray = [UIImage(named: "shoulders")!, UIImage(named: "chest")!, UIImage(named: "back")!, UIImage(named: "biceps")!, UIImage(named: "triceps")!]
+        workoutArray = ["Shoulders", "Chest", "Back", "Biceps", "Triceps"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,14 +45,18 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     }
     
     func getExcerciseType(type : String) -> WorkoutsTableView.ExerciseType {
-        if (type == "Chest") {
+        if (type == "Shoulders") {
+            return .Shoulders
+        } else if (type == "Chest"){
             return .Chest
-        } else if (type == "Arms"){
-            return .Arms
-        } else if (type == "Legs") {
-            return .Legs
+        } else if (type == "Back") {
+            return .Back
+        } else if (type == "Biceps") {
+            return .Biceps
+        }else if (type == "Triceps") {
+            return .Triceps
         } else {
-            return .Chest
+            return .Shoulders
         }
     }
     
