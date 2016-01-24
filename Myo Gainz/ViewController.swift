@@ -22,10 +22,9 @@ class ViewController: TLMSettingsViewController {
         //performSegueWithIdentifier("myoConnected", sender: self)
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
-
-        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChange:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
         
-        NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceiveOrientationEvent:", name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
+        //Do not use the following line unless testing PumpingVC
+        //performSegueWithIdentifier("goToPumping", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,19 +44,6 @@ class ViewController: TLMSettingsViewController {
             performSegueWithIdentifier("myoConnected", sender: self)
         }
         
-    }
-    
-    func didReceivePoseChange (notification: NSNotification) {
-        let pose = notification.userInfo![kTLMKeyPose]
-        
-        if (pose?.type == TLMPoseType.Fist) {
-            
-        }
-        
-    }
-    
-    func didReceiveOrientationEvent (notification : NSNotification) {
-        let orientation = notification.userInfo![kTLMKeyOrientationEvent]
     }
 
 

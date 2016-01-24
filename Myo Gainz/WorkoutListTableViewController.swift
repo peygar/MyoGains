@@ -73,7 +73,41 @@ class WorkoutListTableViewController: UITableViewController {
         case 3:return "Tap your fingers twice to skip exercises"
         default :return ""
         }
+    }
     }*/
+
+  /*  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 1:
+            switch indexPath.row {
+            case 1:
+                performSegueWithIdentifier("workout1", sender: self)
+            default:
+                break;
+                
+            }
+        default:
+            break;
+
+        }
+
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        switch indexPath.section {
+            case 1:
+                switch indexPath.row {
+                case 1:
+                    performSegueWithIdentifier("workout1", sender: self)
+                default:
+                    break;
+    
+                }
+            default:
+                break;
+        }
+    }
 
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 20.0
@@ -187,4 +221,5 @@ class WorkoutListTableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     }
     */
+*/
 }

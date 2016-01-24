@@ -14,6 +14,7 @@
 		6C1E6C051C542E97006C5C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1E6C031C542E97006C5C50 /* Main.storyboard */; };
 		6C1E6C071C543268006C5C50 /* SetRepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */; };
 		6C1E6C091C54349C006C5C50 /* setRepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */; };
+		A916751B1C5491C900DCD4E0 /* PumpingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */; };
 		A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA401C53C60B00C4432E /* AppDelegate.swift */; };
 		A996AA431C53C60B00C4432E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996AA421C53C60B00C4432E /* ViewController.swift */; };
 		A996AA491C53C60B00C4432E /* Myo_Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A996AA471C53C60B00C4432E /* Myo_Gainz.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		6C1E6C041C542E97006C5C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRepsTableViewController.swift; sourceTree = "<group>"; };
 		6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setRepsTableViewCell.swift; sourceTree = "<group>"; };
+		A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpingViewController.swift; sourceTree = "<group>"; };
 		A996AA3D1C53C60B00C4432E /* Myo Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Myo Gainz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A996AA401C53C60B00C4432E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A996AA421C53C60B00C4432E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				6C1E6BF91C542DFF006C5C50 /* MuscleGroupsCollectionViewCell.swift */,
 				6C1E6BF71C542DF8006C5C50 /* MuscleGroupCollectionViewController.swift */,
 				6C1E6C031C542E97006C5C50 /* Main.storyboard */,
+				A916751A1C5491C900DCD4E0 /* PumpingViewController.swift */,
 				6C1E6BFF1C542E49006C5C50 /* WorkoutListTableViewController.swift */,
 				6C1E6C081C54349C006C5C50 /* setRepsTableViewCell.swift */,
 				6C1E6C061C543268006C5C50 /* SetRepsTableViewController.swift */,
@@ -307,6 +310,7 @@
 				6C1E6C001C542E49006C5C50 /* WorkoutListTableViewController.swift in Sources */,
 				A996AA431C53C60B00C4432E /* ViewController.swift in Sources */,
 				A996AA411C53C60B00C4432E /* AppDelegate.swift in Sources */,
+				A916751B1C5491C900DCD4E0 /* PumpingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
