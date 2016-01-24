@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tx6-X0-0RC"/>
                     <connections>
-                        <segue destination="w3f-Zz-i60" kind="show" identifier="myoConnected" id="CK4-qa-nWv"/>
+                        <segue destination="Uen-4B-ph7" kind="show" identifier="myoConnected" id="s1w-M2-h89"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fdV-cU-7Z8">
-                                <rect key="frame" x="40" y="104" width="200" height="200"/>
+                                <rect key="frame" x="40" y="40" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -64,7 +64,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9d-Ju-hfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="786"/>
+            <point key="canvasLocation" x="416" y="1652"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ok8-dI-Pa0">
@@ -176,32 +176,6 @@
             </objects>
             <point key="canvasLocation" x="2008" y="1658"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="bee-1G-CY0">
-            <objects>
-                <viewController id="wha-kX-pdg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bN8-N3-hlv"/>
-                        <viewControllerLayoutGuide type="bottom" id="aia-Kz-fzN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PII-i3-5XM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chest 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-Dg-Inc">
-                                <rect key="frame" x="272" y="96" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FEB-59-OWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1938" y="764"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jzw-Fo-XTp">
             <objects>
@@ -221,4 +195,7 @@
             <point key="canvasLocation" x="416" y="975"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="s1w-M2-h89"/>
+    </inferredMetricsTieBreakers>
 </document>
