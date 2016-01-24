@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="416" y="1652"/>
         </scene>
-        <!--Workouts Table View-->
+        <!--Title-->
         <scene sceneID="XVe-vp-FX0">
             <objects>
                 <tableViewController id="7bI-WB-ZIm" customClass="WorkoutsTableView" customModule="Myo_Gainz" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,6 +87,7 @@
                             <outlet property="delegate" destination="7bI-WB-ZIm" id="HDU-G8-fQe"/>
                         </connections>
                     </tableView>
+
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uj-zj-7as" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,20 +129,22 @@
                             <outlet property="delegate" destination="Uen-4B-ph7" id="pQh-H9-ANW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Tk3-YP-drs">
-                        <barButtonItem key="rightBarButtonItem" title="Set Reps" id="gqR-er-mgG">
+                    <navigationItem key="navigationItem" title="Title" id="mty-VP-aHk">
+                        <barButtonItem key="rightBarButtonItem" title="Set Reps" id="Vtl-3B-iu3">
                             <connections>
-                                <segue destination="bTl-hR-QEv" kind="show" identifier="setReps" id="la2-s4-cfY"/>
+                                <action selector="setReps:" destination="7bI-WB-ZIm" id="6nD-I9-tlJ"/>
+                                <segue destination="bTl-hR-QEv" kind="show" identifier="setReps" id="4Eg-Vl-6La"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="QNI-MT-ImR" kind="show" id="c9f-fM-ACo"/>
+                        <outlet property="setRepsButton" destination="Vtl-3B-iu3" id="T3d-dL-A58"/>
+                        <segue destination="QNI-MT-ImR" kind="show" identifier="startExercise" id="tgZ-12-kcM"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="94S-Io-kzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uj-zj-7ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="842"/>
+            <point key="canvasLocation" x="1156" y="1682"/>
         </scene>
         <!--Title-->
         <scene sceneID="QDU-0a-MkL">
@@ -155,7 +158,7 @@
                             <tableViewSection id="tgL-Zl-8c7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repCell" id="xdT-xV-ED3" customClass="setRepsTableViewCell" customModule="Myo_Gainz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdT-xV-ED3" id="7WG-n9-NHt">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
