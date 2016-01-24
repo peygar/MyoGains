@@ -30,14 +30,18 @@ class Press: NSObject {
     private let myoNotification : NSNotification
     private let myo : TLMMyo
     
+    //PumpingViewController reference
+    private let vc :PumpingViewController
     
-    init (g:UInt, mn: NSNotification) {
+    
+    init (g:UInt, mn: NSNotification, vc1: UIViewController) {
         weightsUp = false
         liftingUp = false
         goal = g
         counter = 0
         myoNotification = mn
         myo = myoNotification.userInfo![kTLMKeyMyo] as! TLMMyo
+        vc = vc1
     }
     
     
@@ -58,7 +62,7 @@ class Press: NSObject {
         liftingUp = true
         print("loop starts")
         repeat {
-            loop ()
+            determineDirection()
         }
             while (counter < goal);
         print("loop ends")
@@ -66,15 +70,6 @@ class Press: NSObject {
         
         //One long vibration to let user know the set is complete
         myo.vibrateWithLength(TLMVibrationLength.Long)
-    }
-    
-    //Loop that checks for downward motion and keeps track of reps
-    private func loop () {
-        if (!liftingUp) {
-            counter++;
-            liftingUp = true
-        }
-        
     }
     
     private func determineDirection () {
@@ -104,7 +99,7 @@ class Press: NSObject {
         if (consecutiveDown == 0) {
             if (liftingUp && direction == -1) {
                 liftingUp = false
-                counter++
+                addOne()
                 consecutiveDown = maxConsecutiveDown
             }
             else if (!liftingUp && direction == 1) {
@@ -120,6 +115,12 @@ class Press: NSObject {
         liftingUp = false
         counter = 0
         consecutiveDown = maxConsecutiveDown
+    }
+    
+    //increase counter in the Press object and the label in vc
+    private func addOne () {
+        counter++
+        vc.repsCounter.text = "\(counter)"
     }
     
     //returns the acceleration given by Myo
