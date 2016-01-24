@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import CoreData
-import Foundation
 
 class PumpingViewController: UIViewController {
     
@@ -17,8 +15,6 @@ class PumpingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let workout = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: self.managedObjectContext) as! PumpingWorkout //how the hell do you make this unique?
-
         // Do any additional setup after loading the view.
     }
 
@@ -29,10 +25,24 @@ class PumpingViewController: UIViewController {
     
     func finishedWorkout() {
         
-        do {
-            try self.managedObjectContext.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
+        let file = "file.txt" 
+        
+        let text = "some text"
+        
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = dir.stringByAppendingPathComponent(file);
+            
+            //writing
+            do {
+                try text.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+            }
+            catch {/* error handling here */}
+            
+            //reading
+            do {
+                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            }
+            catch {/* error handling here */}
         }
         
     }
