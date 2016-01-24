@@ -14,17 +14,24 @@ class PumpingViewController: UIViewController {
     
     @IBOutlet var finishedLabel: UILabel!
     
+    @IBOutlet var grabBarLabel: UILabel!
+    
     private var press: Press!
     
     private var doneLifting: Bool!
+    
+    private var weightsUp: Bool! //indicates the user has grabbed weights
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         doneLifting = false
-        press = Press (g: 4, vc1: self)
+        weightsUp = false
+        press = Press (g: 5, vc1: self)
         finishedLabel.hidden = true
 
+        TLMHub.sharedHub().myoDevices()[0] .unlockWithType(TLMUnlockType.Hold)
+        
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceiveAccelerometerEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didReceivePoseChangedEvent:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
@@ -38,9 +45,13 @@ class PumpingViewController: UIViewController {
     
     func finishedWorkout() {
         
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .FullStyle
+        let dateString = formatter.stringFromDate(NSDate())
+        
         let file = "file.txt" 
         
-        let text = "some text"
+        let text = "\((repsCounter.text)!) reps on \(formatter.stringFromDate(NSDate()))"
         
         if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             let path = dir.stringByAppendingPathComponent(file);
@@ -54,25 +65,34 @@ class PumpingViewController: UIViewController {
             //reading
             do {
                 let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+                print(text2)
             }
             catch {/* error handling here */}
         }
     }
     
     func didReceiveAccelerometerEvent (notification: NSNotification) {
-        press.determineDirection(notification)
+        if (weightsUp == true){
+            press.determineDirection(notification)
+        }
     }
     
     func didReceivePoseChangedEvent (notification: NSNotification) {
-        if (notification.userInfo![kTLMKeyPose] as! TLMPoseType == TLMPoseType.Fist && !doneLifting) {
+        let pose :TLMPose = notification.userInfo![kTLMKeyPose] as! TLMPose
+        
+        if (pose.type == TLMPoseType.Fist && !doneLifting && !weightsUp) {
             //user starts grabbing bar
             press.startGrabbing()
         }
         
-        if (notification.userInfo![kTLMKeyPose] as! TLMPoseType == TLMPoseType.WaveIn) {
+        if (pose.type == TLMPoseType.WaveIn && doneLifting == true && !weightsUp) {
             //wave in gesture. User does another set
             resetPress()
         }
+    }
+    
+    func weightsUpYes () {
+        weightsUp = true
     }
     
     func sendVibration (length: TLMVibrationLength) {
@@ -82,14 +102,17 @@ class PumpingViewController: UIViewController {
     func finishLifting () {
         sendVibration(TLMVibrationLength.Long)
         doneLifting = true
+        weightsUp = false
         finishedLabel.hidden = false
         finishedWorkout()
     }
     
     func resetPress() {
         doneLifting = false
+        weightsUp = false
         finishedLabel.hidden = true
-        press = Press(g: 4, vc1: self)
+        press = Press(g: 5, vc1: self)
+        repsCounter.text = "0"
     }
     
 

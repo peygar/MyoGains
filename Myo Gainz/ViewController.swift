@@ -23,8 +23,6 @@ class ViewController: TLMSettingsViewController {
         
         NSNotificationCenter .defaultCenter() .addObserver(self, selector: "didConnectDevice:", name: TLMHubDidConnectDeviceNotification, object: nil)
         
-        //Do not use the following line unless testing PumpingVC
-        //performSegueWithIdentifier("goToPumping", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +39,9 @@ class ViewController: TLMSettingsViewController {
         let myo = notification.userInfo![kTLMKeyMyo]
         if let my = myo {
             print("Connected to \(my.name)")
-            performSegueWithIdentifier("myoConnected", sender: self)
+            //performSegueWithIdentifier("myoConnected", sender: self)
+            //Do not use the following line unless testing PumpingVC
+            performSegueWithIdentifier("goToPumping", sender: self)
         }
         
     }
