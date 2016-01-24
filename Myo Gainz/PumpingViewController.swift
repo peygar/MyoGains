@@ -16,9 +16,13 @@ class PumpingViewController: UIViewController {
     
     @IBOutlet var grabBarLabel: UILabel!
     
+    private var setCounter: UInt32!
+    
     private var press: Press!
     
     private var doneLifting: Bool!
+    
+    var goal: UInt!
     
     private var weightsUp: Bool! //indicates the user has grabbed weights
 
@@ -27,8 +31,9 @@ class PumpingViewController: UIViewController {
         
         doneLifting = false
         weightsUp = false
-        press = Press (g: 5, vc1: self)
+        press = Press (g: goal, vc1: self)
         finishedLabel.hidden = true
+        setCounter = 0
 
         TLMHub.sharedHub().myoDevices()[0] .unlockWithType(TLMUnlockType.Hold)
         
@@ -43,15 +48,17 @@ class PumpingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func finishedWorkout() {
+    func saveWorkout() {
         
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .FullStyle
-        let dateString = formatter.stringFromDate(NSDate())
+        formatter.dateFormat = "yyyy-MM-dd"
         
         let file = "file.txt" 
+
+        setCounter!++
         
-        let text = "\((repsCounter.text)!) reps on \(formatter.stringFromDate(NSDate()))"
+        let text = "\(setCounter) sets of \((repsCounter.text)!) reps on \(formatter.stringFromDate(NSDate()))"
+
         
         if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             let path = dir.stringByAppendingPathComponent(file);
@@ -104,14 +111,14 @@ class PumpingViewController: UIViewController {
         doneLifting = true
         weightsUp = false
         finishedLabel.hidden = false
-        finishedWorkout()
+        saveWorkout()
     }
     
     func resetPress() {
         doneLifting = false
         weightsUp = false
         finishedLabel.hidden = true
-        press = Press(g: 5, vc1: self)
+        press = Press(g: goal!, vc1: self)
         repsCounter.text = "0"
     }
     
