@@ -9,33 +9,48 @@
 import Foundation
 
 class Press: NSObject {
-    private let delay = UInt32(5)
     
-    private var weightsUp :Bool
-    private var liftingUp: Bool
-    private var goal : UInt
+    //delay
+    private let delay :UInt32 = 5
+    
+    //physics constants and variables
+    private let tolerance : Float = 0.06
+    private let relativityOffset : Float = 0.95 //offset acceleration
+    private let maxConsecutiveDown : UInt32 = 6
+    private var consecutiveDown: UInt32 = 6 //number of times that errors are allowed when determing direction of movements
+    
+    
+    //general constants and variables
+    private var weightsUp: Bool //indicates the user has grabbed weights
+    private var liftingUp: Bool //indicates the weights are being lifted upward
+    private let goal : UInt
     private var counter: UInt
     
-    private var myo : TLMMyo
+    //myo constant (references)
+    private let myoNotification : NSNotification
+    private let myo : TLMMyo
     
-    init (g:UInt) {
+    
+    init (g:UInt, mn: NSNotification) {
         weightsUp = false
         liftingUp = false
         goal = g
         counter = 0
-        myo = TLMHub.sharedHub().myoDevices()[0] as! TLMMyo
+        myoNotification = mn
+        myo = myoNotification.userInfo![kTLMKeyMyo] as! TLMMyo
     }
     
     
     //Should be called when pose is changed to "fist"
-    func startGrabbing () -> UInt {
+    //Main function that keeps the loop running and checks for downward motion
+    func startGrabbing () {
         if (!weightsUp) {
             weightsUp = true
             //pause program
             sleep(delay)
         }
         
-        //Vibrate to let user know the set is starting
+        //Vibrate twice to let user know the set is starting
         myo.vibrateWithLength(TLMVibrationLength.Short)
         myo.vibrateWithLength(TLMVibrationLength.Short)
         
@@ -49,29 +64,72 @@ class Press: NSObject {
         print("loop ends")
         reset()
         
-        //Vibrate to let user know the set is complete
-        myo.vibrateWithLength(TLMVibrationLength.Short)
-        myo.vibrateWithLength(TLMVibrationLength.Short)
-        
-        return getRepsCount()
+        //One long vibration to let user know the set is complete
+        myo.vibrateWithLength(TLMVibrationLength.Long)
     }
     
+    //Loop that checks for downward motion and keeps track of reps
     private func loop () {
         if (!liftingUp) {
             counter++;
             liftingUp = true
         }
-        //Peyman's code to check downward movement
+        
     }
     
+    private func determineDirection () {
+        var direction :Int //1=up; -1=down; 0=stable
+        
+        //Determine direction of motion. Accounts error resulted from shaking
+        let acc = getAccel()
+        
+        
+        if (acc > tolerance) {
+            direction = -1
+            consecutiveDown--
+            print ("Moving down")
+        }
+        else if (acc < -tolerance) {
+            direction = 1
+            consecutiveDown--
+            print ("Moving up")
+        }
+        else {
+            direction = 0
+            consecutiveDown = maxConsecutiveDown
+            print ("Stable")
+        }
+        
+        //Determine direction based on errors
+        if (consecutiveDown == 0) {
+            if (liftingUp && direction == -1) {
+                liftingUp = false
+                counter++
+                consecutiveDown = maxConsecutiveDown
+            }
+            else if (!liftingUp && direction == 1) {
+                liftingUp = true
+                consecutiveDown = maxConsecutiveDown
+            }
+        }
+    }
+    
+    //resets certain variables to their initial states
     private func reset () {
         weightsUp = false
         liftingUp = false
         counter = 0
+        consecutiveDown = maxConsecutiveDown
     }
     
-    private func getRepsCount() -> UInt {
-        return counter
+    //returns the acceleration given by Myo
+    private func getAccel () -> Float {
+        //calculations to return a nicely formatted acceleration to work with
+        var x = myoNotification.userInfo![kTLMKeyAccelerometerEvent]!.vector.x + relativityOffset
+        x *= 100
+        x = floor(x + 0.5) / 100.0
+        return x
     }
+    
     
 }
