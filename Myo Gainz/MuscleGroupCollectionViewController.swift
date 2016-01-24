@@ -38,24 +38,14 @@ class MuscleGroupCollectionViewController: UICollectionViewController {
     */
     
     // MARK: UICollectionViewDataSource
-<<<<<<< Updated upstream
 
-
-=======
-    
-    
->>>>>>> Stashed changes
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fitnessArray.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MuscleGroupsCollectionViewCell
-<<<<<<< Updated upstream
-       
-=======
-        
->>>>>>> Stashed changes
+
         //uncomment this once an image set is loaded
         //cell.imageView?.image = fitnessArray[indexPath.row]
         

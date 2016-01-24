@@ -66,7 +66,7 @@ class WorkoutListTableViewController: UITableViewController {
         default :return ""
         }
     }
-<<<<<<< Updated upstream
+
 
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
@@ -80,9 +80,9 @@ class WorkoutListTableViewController: UITableViewController {
             }
         default:
             break;
-        }
+        }*/
         
-=======
+
     
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     switch indexPath.section {
@@ -108,11 +108,6 @@ class WorkoutListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! WorkoutListTableViewCell
-<<<<<<< Updated upstream
-
-=======
-        
->>>>>>> Stashed changes
         // configure workoutLabel text based on the exercise type selected
         switch workoutType {
         case 1:
